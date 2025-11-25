@@ -1,0 +1,131 @@
+.confirm__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 900px;
+}
+
+.confirm__heading {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+.form-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 40px 50px;
+}
+
+.form {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.confirm-table {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.confirm-table__inner {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.confirm-table__header {
+    padding: 15px 20px;
+    width: 30%;
+    background-color: #f8f8f8;
+    font-weight: 600;
+    font-size: 15px;
+    color: #444;
+    text-align: left;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #eee;
+}
+
+.confirm-table__text {
+    padding: 15px 20px;
+    width: 70%;
+    font-size: 15px;
+    color: #333;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.confirm-table__text input[type="hidden"] {
+    display: none;
+}
+
+.confirm-table__text--content {
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.confirm-table__row:last-child .confirm-table__header,
+.confirm-table__row:last-child .confirm-table__text {
+    border-bottom: none;
+}
+
+.form__actions {
+    margin-top: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.form__button-submit {
+    padding: 12px 20px;
+    width: 40%;
+    max-width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    background: #0d80fb;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+}
+
+.form__button-submit:hover {
+    background-color: #0d80fb;
+    box-shadow: 0 6px 8px rgba(0, 123, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.form__button-submit:active {
+    background-color: #013d7d;
+    transform: translateY(2px);
+}
+
+.form__button-edit {
+    padding: 12px 20px;
+    width: 40%;
+    max-width: 200px;
+    height: 50px;
+    border: 1px solid #999;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #666;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.form__button-edit:hover {
+    background-color: #f0f0f0;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+.form__button-edit:active {
+    background-color: #e0e0e0;
+    transform: translateY(2px);
+}

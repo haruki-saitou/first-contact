@@ -1,0 +1,377 @@
+/* ---------------------------------------------------- */
+/* --- ユーザー提供のベーススタイル --- */
+/* ---------------------------------------------------- */
+
+body {
+    background-color: #f8f8f8;
+    color: #333;
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
+
+main {
+    /* Header (60px) + Padding (20px) = 80px */
+    padding-top: 80px;
+    padding-bottom: 50px;
+    min-height: calc(100vh - 50px);
+}
+
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #525252;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.header__logo:hover {
+    color: #000000;
+}
+
+.header__nav-items {
+    display: flex;
+    align-items: center;
+}
+
+.header__nav-item {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #444;
+    font-weight: 600;
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: color 0.2s, background-color 0.2s;
+    display: block;
+}
+
+.header__nav-item:hover {
+    color: #525252;
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+
+.header__nav-item--button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: inherit;
+    line-height: inherit;
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    font-weight: inherit;
+    text-align: left;
+}
+
+/* ---------------------------------------------------- */
+/* --- 【★中央寄せのための修正点★】 --- */
+/* ---------------------------------------------------- */
+
+.main-content {
+    /* Flexboxを使って、コンテンツ（cardなど）を中央に配置する */
+    display: flex;
+    justify-content: center; /* 水平方向の中央揃え */
+    width: 100%; /* 親要素(main)の幅全体を使う */
+    min-height: 100%;
+    padding: 0 20px; /* 左右に最低限のパディング */
+}
+
+/* ---------------------------------------------------- */
+/* --- History Card Styles (再掲) --- */
+/* ---------------------------------------------------- */
+
+:root {
+    --color-primary: #525252;
+    --color-primary-dark: #333333;
+    --color-primary-light: #707070;
+    --color-primary-rgb: 82, 82, 82;
+    --color-white: #ffffff;
+    --color-gray-50: #fafafa;
+    --color-gray-100: #f4f4f5;
+    --color-gray-200: #e4e4e7;
+    --color-gray-300: #d4d4d8;
+    --color-text: #333;
+    --color-text-secondary: #71717a;
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-info: #3b82f6;
+}
+
+/* グローバルリセットとオーバーフロー対策 */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+}
+
+
+.history-card {
+    /* main-contentが中央寄せを担当するため、幅を定義するだけで良い */
+    max-width: 900px;
+    width: 100%; /* max-widthを超えない範囲で、親要素（main-content）の指定に従う */
+    margin: 30px 0 !important; /* 上下にマージンを設定し、左右はmain-contentに任せる */
+    padding: 30px;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    border-bottom: 2px solid var(--color-gray-100);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.history-count {
+    margin-bottom: 25px;
+    font-size: 16px;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+/* 履歴がない場合のメッセージ */
+.no-history-message {
+    text-align: center;
+    padding: 50px 20px;
+    border: 2px dashed var(--color-gray-200);
+    border-radius: 8px;
+    background-color: var(--color-gray-50);
+}
+
+.no-history-message p {
+    font-size: 18px;
+    color: var(--color-text-secondary);
+    margin-bottom: 25px;
+}
+
+/* お問い合わせ一件ごとの枠 */
+.contact-item {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+}
+
+.contact-item:hover {
+    box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    border-color: var(--color-primary-light);
+}
+
+/* ヘッダー部分 */
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-gray-100);
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.item-id {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    min-width: 0;
+}
+
+.item-date {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+}
+
+/* ステータスタグ */
+.item-status {
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-white);
+    text-transform: uppercase;
+}
+
+.status-pending {
+    background-color: var(--color-warning);
+}
+.status-in_progress {
+    background-color: var(--color-info);
+}
+.status-completed {
+    background-color: var(--color-success);
+}
+
+/* ボディ部分 (コンテンツと画像) */
+.item-body {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.item-content-preview {
+    flex-grow: 1;
+    font-size: 15px;
+    color: var(--color-text);
+    white-space: pre-wrap;
+    line-height: 1.6;
+    overflow: hidden;
+    max-height: 5em;
+    min-width: 0;
+}
+
+/* 画像プレビュー */
+.item-image-preview {
+    flex-shrink: 0;
+    width: 120px;
+    height: 80px;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-gray-100);
+    border: 1px solid var(--color-gray-300);
+    position: relative;
+}
+
+.item-image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.contact-item:hover .item-image-preview img {
+    transform: scale(1.05);
+}
+
+.item-image-preview.no-image {
+    background-color: var(--color-gray-50);
+}
+
+.image-text {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 10px;
+    padding: 3px 6px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: var(--color-white);
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* ボタンのスタイル統一 */
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    box-shadow: 0 4px 10px rgba(var(--color-primary-rgb), 0.3);
+}
+
+/* レスポンシブ対応 (画面幅が600px以下の場合) */
+@media (max-width: 600px) {
+    .main-content {
+        padding: 0 10px; /* モバイルではパディングを減らす */
+    }
+
+    .history-card {
+        width: 100%;
+        margin: 20px 0 !important;
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .item-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .item-id {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+    .item-date {
+        margin-left: 0;
+        order: 3;
+    }
+
+    .item-status {
+        order: 2;
+        margin-top: 5px;
+    }
+
+    .item-body {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .item-image-preview {
+        max-width: 100%;
+        width: 100%;
+        height: 150px;
+    }
+
+    .item-content-preview {
+        max-height: none;
+    }
+
+    .image-text {
+        bottom: 10px;
+        right: 10px;
+        font-size: 12px;
+    }
+}

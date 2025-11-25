@@ -1,0 +1,181 @@
+/*
+ * ログイン/登録画面のカスタムスタイル
+ */
+
+/* ============================================== */
+/* カラー変数 (common.cssとhistory.cssと共通) */
+/* ============================================== */
+:root {
+    --color-primary: #525252;
+    --color-primary-dark: #333333;
+    --color-primary-light: #707070;
+    --color-primary-rgb: 82, 82, 82;
+    --color-white: #ffffff;
+    --color-gray-50: #fafafa;
+    --color-gray-100: #f4f4f5;
+    --color-gray-200: #e4e4e7;
+    --color-gray-300: #d4d4d8;
+    --color-text: #333;
+    --color-text-secondary: #71717a;
+    --color-error: #e3342f; /* 元のCSSから継承 */
+    --color-link: #0d80fb; /* 元のCSSから継承 */
+    --color-link-hover: #0056b3;
+    --color-form-border: #ccc;
+    --color-form-focus: #0d80fb;
+}
+
+/* ============================================== */
+/* 全体コンテナ */
+/* ============================================== */
+.login-form__content {
+    /* フォームを包含するコンテナ。中央寄せはフォーム自体で行うため、パディングのみ設定 */
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 900px;
+}
+
+.login-form__heading {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--color-text);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* ============================================== */
+/* フォーム本体のスタイル (カード形式) */
+/* ============================================== */
+.form {
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); /* より深みのある影 */
+    padding: 40px;
+    max-width: 450px;
+    margin: 30px auto 0; /* 中央寄せ */
+}
+
+/* ============================================== */
+/* フォーム要素 */
+/* ============================================== */
+.form__group {
+    margin-bottom: 20px;
+}
+
+.form__group-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.form__label--item {
+    font-weight: bold;
+    color: var(--color-primary-dark);
+    font-size: 15px; /* やや小さく */
+}
+
+.form__input--text input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-form-border);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form__input--text input:focus {
+    border-color: var(--color-form-focus);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(13, 128, 251, 0.2);
+}
+
+.form__error {
+    color: var(--color-error);
+    font-size: 13px;
+    margin-top: 5px;
+    min-height: 18px; /* エラーがない場合もレイアウトのブレを防ぐ */
+}
+
+/* ============================================== */
+/* 送信ボタン */
+/* ============================================== */
+.form__button {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.form__button-submit {
+    padding: 12px 20px;
+    width: 100%;
+    height: 50px;
+
+    border: none;
+    border-radius: 8px;
+    background: var(--color-link);
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 10px rgba(13, 128, 251, 0.3); /* 影を強調 */
+}
+
+.form__button-submit:hover {
+    background-color: #007bff; /* やや明るく */
+    box-shadow: 0 6px 15px rgba(13, 128, 251, 0.4);
+    transform: translateY(-2px);
+}
+
+.form__button-submit:active {
+    background-color: #013d7d;
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(13, 128, 251, 0.3);
+}
+
+/* ============================================== */
+/* 関連リンク (登録/ログイン切り替え) */
+/* ============================================== */
+.register__link {
+    text-align: center;
+    padding-top: 20px;
+    max-width: 450px;
+    margin: 20px auto 0; /* フォーム本体の下にスペースを空ける */
+
+    border-top: 1px solid var(--color-gray-200); /* 境界線を目立たなくする */
+}
+
+.register__link p {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.register__link a {
+    color: var(--color-link);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s, text-decoration 0.2s;
+    font-size: 15px;
+}
+
+.register__link a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+
+/* ============================================== */
+/* レスポンシブ対応 */
+/* ============================================== */
+@media (max-width: 500px) {
+    .form {
+        margin: 20px 10px 0; /* 左右にマージンを持たせる */
+        padding: 30px 20px; /* パディングを減らす */
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* 影を弱める */
+    }
+
+    .login-form__content {
+        padding: 15px 10px;
+    }
+}

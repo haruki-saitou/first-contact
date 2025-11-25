@@ -1,0 +1,231 @@
+.contact-form__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 900px;
+}
+
+.contact-form__heading {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+.form-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 40px 50px;
+}
+
+.form {
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* --- フォーム共通要素 --- */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.required-star {
+    color: #e53e3e;
+    font-weight: 700;
+    margin-left: 4px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-input:focus {
+    border-color: #0d80fb;
+    box-shadow: 0 0 0 3px rgba(13, 128, 251, 0.2);
+    outline: none;
+}
+
+.form-input--error {
+    border-color: #e53e3e;
+}
+
+textarea.form-input {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.text-error {
+    color: #e53e3e;
+    font-size: 0.875rem;
+    margin-top: 5px;
+}
+
+/* --- 添付ファイルエリア --- */
+
+.image-preview-area {
+    margin-bottom: 15px;
+    border: 1px dashed #a0aec0;
+    border-radius: 8px;
+    background-color: #f7fafc;
+    padding: 15px;
+}
+
+.current-image-preview-wrapper {
+    /* JSでdisplay:flexが指定されることを想定 */
+    align-items: center;
+    gap: 20px;
+}
+
+.current-image-info {
+    font-weight: 500;
+    color: #4a5568;
+    flex-shrink: 0;
+}
+
+.current-image {
+    max-width: 100%;
+    width: 100px; /* 画像サイズを固定 */
+    height: 100px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: block;
+    object-fit: cover; /* 画像をクロップして表示 */
+    margin: 0;
+}
+
+/* --- カスタムファイルアップロード --- */
+.custom-file-upload-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.native-file-input {
+    /* 実際の input[type="file"] は完全に隠す */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.file-upload-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #0d80fb;
+    color: #ffffff;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex-shrink: 0;
+    box-shadow: 0 2px 4px rgba(13, 128, 251, 0.3);
+}
+
+.file-upload-button:hover {
+    background-color: #0056b3;
+}
+
+.file-upload-icon {
+    margin-right: 8px;
+}
+
+.file-name-display {
+    font-size: 0.95rem;
+    color: #718096;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 50px;
+}
+
+.file-name-display.is-selected {
+    color: #2d3748;
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* --- 確認ボタン --- */
+.form__actions {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.form__button-submit {
+    padding: 12px 25px;
+    width: 50%;
+    max-width: 250px;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    background: #0d80fb;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+}
+
+.form__button-submit:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 8px rgba(0, 123, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.form__button-submit:active {
+    background-color: #013d7d;
+    transform: translateY(2px);
+}
+
+/* --- レスポンシブ対応 --- */
+@media (max-width: 640px) {
+    .form-card {
+        padding: 30px 20px;
+    }
+
+    .form__button-submit {
+        width: 100%;
+        max-width: none;
+    }
+
+    .custom-file-upload-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .file-upload-button {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .file-name-display {
+        width: 100%;
+        text-align: center;
+    }
+
+    .current-image-preview-wrapper {
+        flex-wrap: wrap;
+    }
+    .current-image-info {
+        flex-basis: 100%;
+    }
+}
