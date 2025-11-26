@@ -29,6 +29,8 @@
 
 ## ER図
 
+![ER Diagram](assets/er_diagram.png)
+
 #### users Table (User Authentication Information)
 
 | Column Name | Data Type | Key/Constraints | Description |
