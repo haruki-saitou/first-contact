@@ -29,25 +29,23 @@
 
 ## ER図
 
-#### users テーブル (ユーザー認証情報)
-
-| カラム名 | データ型 | 特徴 | 役割 |
+#### users Table (User Authentication Information)
+| Column Name | Data Type | Key/Constraints | Description |
 | :--- | :--- | :--- | :--- |
-| **id** | BIGINT | プライマリキー | ユーザーID |
-| name | VARCHAR | | ユーザー名 |
-| email | VARCHAR | UNIQUE | メールアドレス（ログインID） |
-| password | VARCHAR | | パスワード（ハッシュ化） |
-| email_verified_at | TIMESTAMP | NULL許可 | メール確認日時 |
-| remember_token | VARCHAR | | ログイン維持トークン |
-| created_at/updated_at | TIMESTAMP | | 作成・更新日時 |
+| **id** | BIGINT | Primary Key | User ID |
+| name | VARCHAR | | User Name |
+| email | VARCHAR | UNIQUE | Email Address (Login ID) |
+| password | VARCHAR | | Password (Hashed) |
+| email_verified_at | TIMESTAMP | Nullable | Email Verification Timestamp |
+| remember_token | VARCHAR | | Login Persistence Token |
+| created_at/updated_at | TIMESTAMP | | Record Creation/Update Timestamps |
 
-#### contacts テーブル (お問い合わせ内容)
-
-| カラム名 | データ型 | 特徴 | 役割 |
+#### contacts Table (Contact Form Submissions)
+| Column Name | Data Type | Key/Constraints | Description |
 | :--- | :--- | :--- | :--- |
-| **id** | BIGINT | プライマリキー | お問い合わせID |
-| name | VARCHAR | | 問い合わせ主の名前 |
-| email | VARCHAR | | 問い合わせ主のメール |
-| tel | VARCHAR | 長さ11 | 電話番号 |
-| content | TEXT | NULL許可 | 問い合わせ内容 |
-| created_at/updated_at | TIMESTAMP | | 作成・更新日時 |
+| **id** | BIGINT | Primary Key | Contact ID |
+| name | VARCHAR | | Submitter's Name |
+| email | VARCHAR | | Submitter's Email |
+| tel | VARCHAR | Length 11 | Phone Number |
+| content | TEXT | Nullable | Submission Content/Message |
+| created_at/updated_at | TIMESTAMP | | Record Creation/Update Timestamps |
