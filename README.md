@@ -1,10 +1,14 @@
+# first-contact
+
 # 環境構築
 
 ## Dockerビルド
+
  ・ git clone <git@github.com>:haruki-saitou/first-contact.git
  ・ docker-compose up -d --build
 
 ## Laravel環境構築
+
  ・ docker-compose exec php bash
  ・ composer install
  ・ cp .env.exemple. .env , 環境変数を適宣変更
@@ -12,16 +16,18 @@
  ・ php artisan migrate
  ・ php artisan db:seed
 
- ## 開発環境
- ・ お問合せ画面 : http://localhost/
- ・ ユーザー登録 : http://localhost/register
- ・ ログイン : http://localhost/login
- ・ お問合せ内容確認 : http://localhost/contacts/confirm
- ・ 送信完了画面 : http://localhost/complete
- ・ 送信履歴 : http://localhost/contact/history
- ・ phpMyAdmin : http://localhost:8080/
+## 開発環境
+
+ ・ お問合せ画面 : <http://localhost/>
+ ・ ユーザー登録 : <http://localhost/register>
+ ・ ログイン : <http://localhost/login>
+ ・ お問合せ内容確認 : <http://localhost/contacts/confirm>
+ ・ 送信完了画面 : <http://localhost/complete>
+ ・ 送信履歴 : <http://localhost/contact/history>
+ ・ phpMyAdmin : <http://localhost:8080/>
 
 ## 使用技術(実行環境)
+
 ・ PHP 8.1.33
 ・ MySQL 8.0
 ・ nginx 1.21.1
